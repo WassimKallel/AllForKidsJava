@@ -1,0 +1,15 @@
+# Compiled class file
+*.class
+
+# Log file
+*.log
+
+# MacOS Finder files
+.DS_Store
+
+hs_err_pid*
+/AllForKids/nbproject/private/
+/nbproject/private/
+/build/
+/dist/
+/TestingHtmlWithImage/nbproject/private/
