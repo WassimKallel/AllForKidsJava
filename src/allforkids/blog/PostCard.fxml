@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxWidth="320.0" minWidth="320.0" prefWidth="320.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="allforkids.blog.PostCardController">
+   <children>
+      <VBox maxWidth="302.0" minWidth="302.0" prefWidth="302.0" styleClass="post" stylesheets="@blog.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="18.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="15.0">
+         <children>
+            <AnchorPane>
+               <children>
+                  <Label fx:id="titleLabel" style="-fx-min-width: inherit;" styleClass="post-card-header" text="Blog Post Title" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="imageContainer" maxHeight="200.0" maxWidth="280.0" minHeight="200.0" minWidth="280.0" prefHeight="200.0" prefWidth="280.0" VBox.vgrow="NEVER" />
+            <AnchorPane styleClass="post-card-footer">
+               <children>
+                  <JFXButton onAction="#readMoreBtn" styleClass="primary-btn" text="Read More" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="10.0" />
+                  <HBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="120.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <Label fx:id="postedByLabel" text="">
+                           <padding>
+                              <Insets bottom="12.0" left="12.0" right="20.0" top="12.0" />
+                           </padding>
+                        </Label>
+                        <FlowPane fx:id="tagsFlowPane" />
+                     </children>
+                  </HBox>
+               </children>
+            </AnchorPane>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

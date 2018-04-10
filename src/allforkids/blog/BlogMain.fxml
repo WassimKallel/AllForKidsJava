@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="600.0" prefWidth="1024.0" stylesheets="@blog.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="allforkids.blog.BlogMainController">
+   <children>
+      <BorderPane prefHeight="60.0" prefWidth="1024.0" style="-fx-background-color: gray;">
+         <left>
+            <Label text="All for kids blog" textFill="#e8e8e8" BorderPane.alignment="CENTER">
+               <font>
+                  <Font size="25.0" />
+               </font>
+               <BorderPane.margin>
+                  <Insets />
+               </BorderPane.margin>
+               <padding>
+                  <Insets left="20.0" />
+               </padding>
+            </Label>
+         </left>
+         <right>
+            <HBox prefHeight="60.0" BorderPane.alignment="CENTER">
+               <children>
+                  <JFXButton fx:id="filterButton" onAction="#openFilter" styleClass="primary-btn" text="Filter/Search">
+                     <HBox.margin>
+                        <Insets bottom="12.0" left="5.0" right="5.0" top="12.0" />
+                     </HBox.margin>
+                  </JFXButton>
+                  <JFXButton onAction="#goToMainMenu" styleClass="primary-btn" text="Main Menu">
+                     <HBox.margin>
+                        <Insets bottom="12.0" left="5.0" right="12.0" top="12.0" />
+                     </HBox.margin>
+                  </JFXButton>
+               </children>
+            </HBox>
+         </right>
+      </BorderPane>
+      <HBox fx:id="filterHBox" maxHeight="0.0" minHeight="0.0" prefHeight="0.0" visible="false">
+         <children>
+            <JFXTextField fx:id="searchTF" promptText="Search">
+               <HBox.margin>
+                  <Insets right="10.0" />
+               </HBox.margin></JFXTextField>
+            <JFXButton minWidth="35.0" onAction="#search" styleClass="primary-btn" text="Search">
+               <HBox.margin>
+                  <Insets right="10.0" />
+               </HBox.margin></JFXButton>
+            <JFXTextField fx:id="tagTF" onKeyReleased="#TagTfKeyReleased" promptText="Tag">
+               <HBox.margin>
+                  <Insets right="10.0" />
+               </HBox.margin></JFXTextField>
+            <JFXButton fx:id="AddTagButton" minWidth="35.0" onAction="#addTag" styleClass="primary-btn" text="+">
+               <HBox.margin>
+                  <Insets right="10.0" />
+               </HBox.margin></JFXButton>
+            <HBox fx:id="tagsHBox" prefWidth="450.0">
+               <padding>
+                  <Insets bottom="-10.0" top="-10.0" />
+               </padding>
+            </HBox>
+            <JFXButton fx:id="FilterButton" onAction="#filter" styleClass="primary-btn" text="Filter" />
+            <JFXButton onAction="#reset" styleClass="primary-btn" text="Reset">
+               <HBox.margin>
+                  <Insets left="10.0" />
+               </HBox.margin>
+            </JFXButton>
+         </children>
+         <padding>
+            <Insets bottom="15.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+      </HBox>
+      <ScrollPane fx:id="allPostsScrollPane" hbarPolicy="NEVER" prefHeight="540.0" prefWidth="1024.0">
+         <content>
+            <FlowPane fx:id="allPostsFlowPane" minHeight="538.0" prefWidth="1020.0" />
+         </content>
+      </ScrollPane>
+   </children>
+</VBox>

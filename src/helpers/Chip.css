@@ -1,0 +1,47 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Apr 4, 2018, 12:15:24 PM
+    Author     : Wassim
+*/
+
+.chip {
+    -fx-background-color: #E0E0E0; 
+    -fx-background-radius: 50;
+    -fx-text-fill: grey;
+    -fx-font-family: Roboto Medium; 
+    -fx-font-size: 14;
+    -fx-padding: 10 15 10 15;
+    -fx-background-insets: 5px;
+}
+
+
+.closeBtn {
+    -fx-text-fill: whitesmoke;
+    -fx-background-radius: 50%;
+    -fx-border-radius: 50%;
+    -fx-background-color: grey;
+}
+
+.chipLabel {
+    -fx-padding: 5px;
+}
+
+.disabled-chip {
+    -fx-background-color: darkgray; 
+    -fx-background-radius: 50;
+    -fx-text-fill: white;
+    -fx-font-family: Roboto Medium; 
+    -fx-font-size: 14;
+    -fx-padding: 5 15 5 15;
+    -fx-background-insets: 5px;
+}
+
+.disabled-chip-label{
+    -fx-padding: 5px;
+    -fx-text-fill: whitesmoke;
+}
+
