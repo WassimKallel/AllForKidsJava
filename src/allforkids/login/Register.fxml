@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" maxHeight="600.0" maxWidth="1024.0" minHeight="600.0" minWidth="1024.0" prefHeight="600.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="allforkids.login.RegisterController">
+   <children>
+      <StackPane layoutX="184.0" layoutY="100.0" prefHeight="550.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <VBox prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <Pane prefHeight="287.0" prefWidth="1024.0" style="-fx-background-color: #428bca;" />
+                  <Pane prefHeight="319.0" prefWidth="1024.0" style="-fx-background-color: #e8e8e8;" />
+               </children>
+            </VBox>
+            <AnchorPane prefHeight="486.0" prefWidth="1024.0" style="-fx-background-color: transparent;">
+               <children>
+                  <AnchorPane layoutX="154.0" layoutY="101.0" prefHeight="378.0" prefWidth="760.0" style="-fx-background-color: WHITE; -fx-effect: dropshadow(gaussian, rgb(0.0, 0.0, 0.0, 0.15), 6.0, 0.7, 0.0,1.5); -fx-background-radius: 4; -fx-border-radius: 4; -fx-padding: 8;">
+                     <children>
+                        <JFXTextField fx:id="firstNameTF" labelFloat="true" layoutX="29.0" layoutY="33.0" maxWidth="316.0" minWidth="233.0" prefHeight="31.0" prefWidth="316.0" promptText="First name">
+                           <font>
+                              <Font name="Roboto Medium" size="14.0" />
+                           </font>
+                        </JFXTextField>
+                        <JFXTextField fx:id="lastNameTF" labelFloat="true" layoutX="28.0" layoutY="98.0" maxWidth="316.0" minWidth="233.0" prefHeight="31.0" prefWidth="316.0" promptText="Last name">
+                           <font>
+                              <Font name="Roboto Medium" size="14.0" />
+                           </font>
+                        </JFXTextField>
+                        <JFXTextField fx:id="phoneTF" labelFloat="true" layoutX="28.0" layoutY="166.0" maxWidth="316.0" minWidth="233.0" onKeyTyped="#phoneTyped" prefHeight="31.0" prefWidth="316.0" promptText="Phone">
+                           <font>
+                              <Font name="Roboto Medium" size="14.0" />
+                           </font>
+                        </JFXTextField>
+                        <JFXTextField fx:id="usernameTF" labelFloat="true" layoutX="384.0" layoutY="33.0" maxWidth="316.0" minWidth="233.0" prefHeight="31.0" prefWidth="316.0" promptText="Username">
+                           <font>
+                              <Font name="Roboto Medium" size="14.0" />
+                           </font>
+                        </JFXTextField>
+                        <JFXPasswordField fx:id="passwordTF" labelFloat="true" layoutX="383.0" layoutY="100.0" maxWidth="316.0" minWidth="235.0" prefHeight="31.0" prefWidth="316.0" promptText="Password">
+                           <font>
+                              <Font name="Roboto Medium" size="14.0" />
+                           </font>
+                        </JFXPasswordField>
+                        <JFXTextField fx:id="mailTF" labelFloat="true" layoutX="380.0" layoutY="166.0" maxWidth="316.0" minWidth="233.0" prefHeight="31.0" prefWidth="316.0" promptText="E-mail">
+                           <font>
+                              <Font name="Roboto Medium" size="14.0" />
+                           </font>
+                        </JFXTextField>
+                        <JFXButton layoutX="173.0" layoutY="297.0" onAction="#backToLogin" prefHeight="27.0" prefWidth="171.0" text="Back To Login" />
+                        <JFXButton fx:id="registerBtn" layoutX="387.0" layoutY="295.0" onAction="#onRegister" prefHeight="32.0" prefWidth="171.0" style="-fx-background-color: #428bca#428bca;" text="Register" textFill="WHITE">
+                           <font>
+                              <Font name="Roboto Bold" size="14.0" />
+                           </font>
+                        </JFXButton>
+                        <HBox fx:id="phoneVerifHbox" layoutX="29.0" layoutY="231.0" prefHeight="41.0" prefWidth="316.0" visible="false">
+                           <children>
+                              <JFXButton fx:id="sendBtn" onAction="#sendVerifSMS" text="Send Verification SMS">
+                                 <HBox.margin>
+                                    <Insets bottom="7.0" left="7.0" right="7.0" top="7.0" />
+                                 </HBox.margin>
+                              </JFXButton>
+                              <JFXTextField fx:id="verifCodeTf" onKeyReleased="#verifCodeTyped" prefHeight="27.0" prefWidth="133.0">
+                                 <HBox.margin>
+                                    <Insets bottom="7.0" left="7.0" right="7.0" top="7.0" />
+                                 </HBox.margin>
+                              </JFXTextField>
+                           </children>
+                        </HBox>
+                     </children>
+                  </AnchorPane>
+                  <VBox layoutX="277.0" layoutY="26.0" prefHeight="73.0" prefWidth="469.0">
+                     <children>
+                        <Label alignment="CENTER" prefHeight="41.0" prefWidth="468.0" text="All For Kids - Register" textAlignment="CENTER" textFill="WHITE">
+                           <font>
+                              <Font name="Helvetica" size="34.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" prefHeight="32.0" prefWidth="425.0" textAlignment="CENTER" textFill="WHITE">
+                           <font>
+                              <Font name="Roboto Bold" size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+         </children>
+      </StackPane>
+      <ImageView fitHeight="371.0" fitWidth="371.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="-120.0">
+         <image>
+            <Image url="img/girl.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="353.0" fitWidth="353.0" layoutX="-157.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-120.0">
+         <image>
+            <Image url="img/boy.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
