@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" maxHeight="600.0" maxWidth="1024.0" minHeight="600.0" minWidth="1024.0" prefHeight="600.0" prefWidth="1024.0" stylesheets="@welcome.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="allforkids.welcome.WelcomeController">
+   <children>
+      <BorderPane layoutX="10.0" layoutY="10.0" prefHeight="60.0" prefWidth="1024.0" style="-fx-background-color: gray;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <left>
+            <Label text="All for kids" textFill="#e8e8e8" BorderPane.alignment="CENTER">
+               <font>
+                  <Font size="25.0" />
+               </font>
+               <BorderPane.margin>
+                  <Insets />
+               </BorderPane.margin>
+               <padding>
+                  <Insets left="20.0" />
+               </padding>
+            </Label>
+         </left>
+         <right>
+            <HBox BorderPane.alignment="CENTER">
+               <children>
+                  <AnchorPane fx:id="avatarContainer" prefHeight="40.0" prefWidth="40.0">
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" />
+                     </padding>
+                     <HBox.margin>
+                        <Insets top="10.0" />
+                     </HBox.margin></AnchorPane>
+                  <JFXButton fx:id="userFullNameBtn" onAction="#goToProfile" ripplerFill="#eeeeee" textFill="#eeeeee">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets bottom="10.0" top="10.0" />
+                     </HBox.margin>
+                  </JFXButton>
+                  <JFXButton onAction="#logout" styleClass="primary-btn" text="Logout">
+                     <HBox.margin>
+                        <Insets bottom="15.0" left="30.0" right="15.0" top="15.0" />
+                     </HBox.margin>
+                  </JFXButton>
+               </children>
+            </HBox>
+         </right>
+      </BorderPane>
+      <HBox layoutY="172.0" prefHeight="270.0" AnchorPane.bottomAnchor="158.0" AnchorPane.leftAnchor="70.0" AnchorPane.rightAnchor="70.0" AnchorPane.topAnchor="172.0">
+         <children>
+            <JFXButton onAction="#goToBlog" prefHeight="270.0" prefWidth="270.0">
+               <graphic>
+                  <VBox prefHeight="270.0" prefWidth="270.0">
+                     <children>
+                        <FontAwesomeIconView fx:id="blogIcon" fill="#428bca" glyphName="" size="64" text="" wrappingWidth="61.0">
+                           <VBox.margin>
+                              <Insets bottom="20.0" left="100.0" right="100.0" top="60.0" />
+                           </VBox.margin>
+                        </FontAwesomeIconView>
+                        <Label alignment="TOP_CENTER" prefHeight="160.0" prefWidth="274.0" text="Blog" textFill="#428bca">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+               </graphic>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </JFXButton>
+            <JFXButton onAction="#goToForum" prefHeight="270.0" prefWidth="270.0">
+               <graphic>
+                  <VBox prefHeight="270.0" prefWidth="270.0">
+                     <children>
+                        <FontAwesomeIconView fx:id="forumIcon" fill="#428bca" glyphName="" size="64" text="" wrappingWidth="61.0">
+                           <VBox.margin>
+                              <Insets bottom="20.0" left="100.0" right="100.0" top="60.0" />
+                           </VBox.margin>
+                        </FontAwesomeIconView>
+                        <Label alignment="TOP_CENTER" prefHeight="160.0" prefWidth="274.0" text="Forum" textFill="#428bca">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+               </graphic>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </JFXButton>
+            <JFXButton onAction="#goToStore" prefHeight="270.0" prefWidth="270.0">
+               <graphic>
+                  <VBox prefHeight="270.0" prefWidth="270.0">
+                     <children>
+                        <FontAwesomeIconView fx:id="storeIcon" fill="#428bca" glyphName="" size="64" text="" wrappingWidth="61.0">
+                           <VBox.margin>
+                              <Insets bottom="20.0" left="100.0" right="100.0" top="60.0" />
+                           </VBox.margin>
+                        </FontAwesomeIconView>
+                        <Label alignment="TOP_CENTER" prefHeight="160.0" prefWidth="274.0" text="Store" textFill="#428bca">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+               </graphic>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </JFXButton>
+         </children>
+      </HBox>
+      <JFXButton fx:id="goToDashboardBtn" layoutX="682.0" layoutY="559.0" onAction="#gotToDashboard" styleClass="primary-btn" text="You are a .. Go to Dashboard" AnchorPane.bottomAnchor="15.0" AnchorPane.rightAnchor="15.0" />
+   </children>
+</AnchorPane>
