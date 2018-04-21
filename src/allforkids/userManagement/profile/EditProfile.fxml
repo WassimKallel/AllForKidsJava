@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" maxHeight="600.0" maxWidth="1024.0" minHeight="600.0" minWidth="1024.0" prefHeight="600.0" prefWidth="1024.0" stylesheets="@profile.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="allforkids.userManagement.profile.EditProfileController">
+   <children>
+      <BorderPane layoutX="20.0" layoutY="20.0" prefHeight="60.0" prefWidth="1024.0" style="-fx-background-color: gray;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <left>
+            <Label text="All for kids" textFill="#e8e8e8" BorderPane.alignment="CENTER">
+               <font>
+                  <Font size="25.0" />
+               </font>
+               <BorderPane.margin>
+                  <Insets />
+               </BorderPane.margin>
+               <padding>
+                  <Insets left="20.0" />
+               </padding>
+            </Label>
+         </left>
+         <right>
+            <HBox BorderPane.alignment="CENTER">
+               <children>
+                  <JFXButton onAction="#goToWelcome" styleClass="primary-btn" text="Back to Welcome Page">
+                     <HBox.margin>
+                        <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                     </HBox.margin>
+                  </JFXButton>
+               </children>
+            </HBox>
+         </right>
+      </BorderPane>
+      <VBox layoutX="476.0" layoutY="185.0" prefHeight="353.0" prefWidth="512.0">
+         <children>
+            <JFXTextField fx:id="firstNameTF" labelFloat="true" promptText="First name">
+               <font>
+                  <Font name="Roboto Medium" size="14.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+               </VBox.margin>
+            </JFXTextField>
+            <JFXTextField fx:id="lastNameTF" labelFloat="true" promptText="Last name">
+               <font>
+                  <Font name="Roboto Medium" size="14.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+               </VBox.margin>
+            </JFXTextField>
+            <JFXTextField fx:id="usernameTF" labelFloat="true" promptText="Username">
+               <font>
+                  <Font name="Roboto Medium" size="14.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+               </VBox.margin>
+            </JFXTextField>
+            <JFXTextField fx:id="mailTF" labelFloat="true" promptText="E-mail">
+               <font>
+                  <Font name="Roboto Medium" size="14.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+               </VBox.margin>
+            </JFXTextField>
+            <JFXPasswordField fx:id="passwordTF" labelFloat="true" promptText="Password">
+               <font>
+                  <Font name="Roboto Medium" size="14.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+               </VBox.margin>
+            </JFXPasswordField>
+            <JFXButton onAction="#onEdit" prefHeight="35.0" prefWidth="508.0" styleClass="primary-btn" text="Edit">
+               <VBox.margin>
+                  <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+               </VBox.margin>
+            </JFXButton>
+         </children>
+      </VBox>
+      <Label layoutX="408.0" layoutY="94.0" text="Edit your profile" textFill="#080808">
+         <font>
+            <Font size="28.0" />
+         </font>
+      </Label>
+      <AnchorPane fx:id="avatarImContainer" layoutX="118.0" layoutY="185.0" onMouseClicked="#uploadPic" prefHeight="256.0" prefWidth="256.0" />
+      <Label layoutX="156.0" layoutY="441.0" text="Click on the picture to upload" />
+   </children>
+</AnchorPane>
