@@ -1,0 +1,84 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Apr 4, 2018, 11:47:24 PM
+    Author     : Wassim
+*/
+.primary-btn {
+    -jfx-button-type: FLAT; 
+    -fx-background-color: #428bca; 
+    -fx-text-fill: white;
+}
+
+
+.post-card-header {
+    -fx-background-color: #e8e8e8;
+    -fx-text-fill: #428bca;
+    -fx-padding: 12;
+}
+
+.post {
+    -fx-background-radius: 10;
+    -fx-border-insets: 10px;
+    -fx-background-insets: 5px;
+    -fx-text-fill: grey;
+    -fx-font-family: Roboto Medium; 
+    -fx-border-color: #d3d3d3;
+    -fx-border-radius: 4;
+}
+
+.post-card-footer {
+    -fx-background-color: #e8e8e8;
+    -fx-padding: 5 5 5 0;
+    -fx-pref-height: 30;
+}
+
+
+/*.post-details {
+    -fx-background-radius: 10;
+    -fx-border-insets: 10px;
+    -fx-background-insets: 5px;
+    -fx-text-fill: grey;
+    -fx-font-family: Roboto Medium; 
+    -fx-border-color: #d3d3d3;
+    -fx-border-radius: 4;
+}*/
+
+.post-details-content {
+    -fx-border-color:transparent;
+}
+
+.no-comment {
+    -fx-margin-top:5px;
+    -fx-margin-bottom:5px;
+}
+
+
+.comment {
+    -fx-background-radius: 10;
+    -fx-border-insets: 10 10 10 0;
+    -fx-background-insets: 5px;
+    -fx-text-fill: grey;
+    -fx-font-family: Roboto Medium; 
+    -fx-border-color: #d3d3d3;
+    -fx-border-radius: 4;
+}
+
+.file-choosed {
+    -fx-background-color: #4BB543; 
+}
+
+.red-btn {
+     -jfx-button-type: FLAT; 
+    -fx-background-color: red; 
+    -fx-text-fill: white;
+}
+
+.green-btn {
+     -jfx-button-type: FLAT; 
+    -fx-background-color: green; 
+    -fx-text-fill: white;
+}
