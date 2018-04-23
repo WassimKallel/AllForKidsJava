@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" maxHeight="600.0" maxWidth="1024.0" minHeight="600.0" minWidth="1024.0" prefHeight="600.0" prefWidth="1024.0" stylesheets="@blog.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="allforkids.dashboard.blog.PostsListController">
+   <children>
+      <BorderPane layoutX="20.0" layoutY="20.0" prefHeight="60.0" prefWidth="1024.0" style="-fx-background-color: gray;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <left>
+            <Label text="All for kids Blog" textFill="#e8e8e8" BorderPane.alignment="CENTER">
+               <font>
+                  <Font size="25.0" />
+               </font>
+               <BorderPane.margin>
+                  <Insets />
+               </BorderPane.margin>
+               <padding>
+                  <Insets left="20.0" />
+               </padding>
+            </Label>
+         </left>
+         <right>
+            <HBox BorderPane.alignment="CENTER">
+               <children>
+                  <JFXButton onAction="#goToMainMenu" styleClass="primary-btn" text="Main Menu">
+                     <HBox.margin>
+                        <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                     </HBox.margin>
+                  </JFXButton>
+               </children>
+            </HBox>
+         </right>
+      </BorderPane>
+      <HBox layoutY="61.0" prefHeight="45.0" prefWidth="1024.0">
+         <children>
+            <JFXButton onAction="#goToAdd" styleClass="green-btn" text="Add">
+               <HBox.margin>
+                  <Insets bottom="7.0" left="7.0" right="7.0" top="7.0" />
+               </HBox.margin>
+            </JFXButton>
+            <JFXButton onAction="#goToEdit" styleClass="primary-btn" text="Edit">
+               <HBox.margin>
+                  <Insets bottom="7.0" left="7.0" right="7.0" top="7.0" />
+               </HBox.margin>
+            </JFXButton>
+            <JFXButton onAction="#deleteClicked" styleClass="red-btn" text="Delete">
+               <HBox.margin>
+                  <Insets bottom="7.0" left="7.0" right="7.0" top="7.0" />
+               </HBox.margin>
+            </JFXButton>
+         </children>
+      </HBox>
+      <TableView fx:id="postsTableView" editable="true" layoutY="105.0" prefHeight="495.0" prefWidth="1024.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="105.0">
+        <columns>
+          <TableColumn fx:id="authorCol" prefWidth="135.0" text="Author" />
+          <TableColumn fx:id="titleCol" minWidth="8.0" prefWidth="705.0" text="Title" />
+            <TableColumn fx:id="thumbnailCol" minWidth="0.0" prefWidth="185.0" text="Thumbnail" />
+        </columns>
+         <padding>
+            <Insets left="-1.0" right="-1.0" />
+         </padding>
+      </TableView>
+   </children>
+</AnchorPane>
