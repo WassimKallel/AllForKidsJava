@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" maxHeight="600.0" maxWidth="1024.0" minHeight="600.0" minWidth="1024.0" prefHeight="600.0" prefWidth="1024.0" stylesheets="@dashboard.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="allforkids.dashboard.MainController">
+   <children>
+      <BorderPane prefHeight="60.0" prefWidth="1024.0" style="-fx-background-color: gray;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <left>
+            <Label text="All for kids dashboard" textFill="#e8e8e8" BorderPane.alignment="CENTER">
+               <font>
+                  <Font size="25.0" />
+               </font>
+               <BorderPane.margin>
+                  <Insets />
+               </BorderPane.margin>
+               <padding>
+                  <Insets left="20.0" />
+               </padding>
+            </Label>
+         </left>
+      </BorderPane>
+      <VBox layoutY="69.0" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="70.0" AnchorPane.rightAnchor="70.0" AnchorPane.topAnchor="70.0">
+         <children>
+            <HBox prefHeight="240.0">
+               <children>
+                  <JFXButton fx:id="usersMenu" onAction="#userMenuClicked" prefHeight="270.0" prefWidth="270.0">
+                     <graphic>
+                        <VBox prefHeight="270.0" prefWidth="270.0">
+                           <children>
+                              <FontAwesomeIconView fx:id="usersIcon" fill="#428bca" glyphName="" size="64" text="" wrappingWidth="61.0">
+                                 <VBox.margin>
+                                    <Insets bottom="20.0" left="100.0" right="100.0" top="60.0" />
+                                 </VBox.margin>
+                              </FontAwesomeIconView>
+                              <Label fx:id="usersLabel" alignment="TOP_CENTER" prefHeight="160.0" prefWidth="274.0" text="Label" textFill="#428bca">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+                     </graphic>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </JFXButton>
+                  <JFXButton fx:id="blogMenu" onAction="#blogMenuClicked" prefHeight="270.0" prefWidth="270.0">
+                     <graphic>
+                        <VBox prefHeight="270.0" prefWidth="270.0">
+                           <children>
+                              <FontAwesomeIconView fx:id="blogIcon" fill="#428bca" glyphName="" size="64" text="" wrappingWidth="61.0">
+                                 <VBox.margin>
+                                    <Insets bottom="20.0" left="100.0" right="100.0" top="60.0" />
+                                 </VBox.margin>
+                              </FontAwesomeIconView>
+                              <Label fx:id="blogLabel" alignment="TOP_CENTER" prefHeight="160.0" prefWidth="274.0" text="Label" textFill="#428bca">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+                     </graphic>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </JFXButton>
+                  <JFXButton fx:id="forumMenu" onAction="#forumMenuClicked" prefHeight="270.0" prefWidth="270.0">
+                     <graphic>
+                        <VBox prefHeight="270.0" prefWidth="270.0">
+                           <children>
+                              <FontAwesomeIconView fx:id="forumIcon" fill="#428bca" glyphName="ALIGN_JUSTIFY" size="64" text="" wrappingWidth="61.0">
+                                 <VBox.margin>
+                                    <Insets bottom="20.0" left="100.0" right="100.0" top="60.0" />
+                                 </VBox.margin>
+                              </FontAwesomeIconView>
+                              <Label fx:id="forumLabel" alignment="TOP_CENTER" prefHeight="160.0" prefWidth="274.0" text="Label" textFill="#428bca">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+                     </graphic>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </JFXButton>
+               </children>
+            </HBox>
+            <HBox prefHeight="240.0">
+               <children>
+                  <JFXButton fx:id="productsMenu" onAction="#goToProducts" prefHeight="270.0" prefWidth="270.0">
+                     <graphic>
+                        <VBox prefHeight="270.0" prefWidth="270.0">
+                           <children>
+                              <FontAwesomeIconView fx:id="productsIcon" fill="#428bca" glyphName="" size="64" text="" wrappingWidth="61.0">
+                                 <VBox.margin>
+                                    <Insets bottom="20.0" left="100.0" right="100.0" top="60.0" />
+                                 </VBox.margin>
+                              </FontAwesomeIconView>
+                              <Label fx:id="productsLabel" alignment="TOP_CENTER" prefHeight="160.0" prefWidth="274.0" text="Label" textFill="#428bca">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+                     </graphic>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </JFXButton>
+                  <JFXButton fx:id="OrdersMenu" onAction="#goToOrderManagement" prefHeight="270.0" prefWidth="270.0">
+                     <graphic>
+                        <VBox prefHeight="270.0" prefWidth="270.0">
+                           <children>
+                              <FontAwesomeIconView fx:id="ordersIcon" fill="#428bca" glyphName="" size="64" text="" wrappingWidth="61.0">
+                                 <VBox.margin>
+                                    <Insets bottom="20.0" left="100.0" right="100.0" top="60.0" />
+                                 </VBox.margin>
+                              </FontAwesomeIconView>
+                              <Label fx:id="ordersLabel" alignment="TOP_CENTER" prefHeight="160.0" prefWidth="274.0" text="Label" textFill="#428bca">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+                     </graphic>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </JFXButton>
+                  <JFXButton fx:id="StatisticsMenu" onAction="#goToStats" prefHeight="270.0" prefWidth="270.0">
+                     <graphic>
+                        <VBox prefHeight="270.0" prefWidth="270.0">
+                           <children>
+                              <FontAwesomeIconView fx:id="statisticsIcon" fill="#428bca" glyphName="" size="64" text="" wrappingWidth="61.0">
+                                 <VBox.margin>
+                                    <Insets bottom="20.0" left="100.0" right="100.0" top="60.0" />
+                                 </VBox.margin>
+                              </FontAwesomeIconView>
+                              <Label fx:id="statisticsLabel" alignment="TOP_CENTER" prefHeight="160.0" prefWidth="274.0" text="Label" textFill="#428bca">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+                     </graphic>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </JFXButton>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <JFXButton layoutX="692.0" layoutY="569.0" onAction="#goToWelcome" styleClass="primary-btn" text="Welcome Page" AnchorPane.bottomAnchor="15.0" AnchorPane.rightAnchor="15.0" />
+   </children>
+</AnchorPane>
