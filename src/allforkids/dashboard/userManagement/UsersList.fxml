@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+
+<AnchorPane id="AnchorPane" maxHeight="600.0" maxWidth="1024.0" minHeight="600.0" minWidth="1024.0" prefHeight="600.0" prefWidth="1024.0" stylesheets="@dashboard.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="allforkids.dashboard.userManagement.UsersListController">
+   <children>
+      <AnchorPane id="AnchorPane" layoutY="4.0" prefHeight="60.0" prefWidth="1024.0" style="-fx-background-color: gray;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label layoutX="14.0" layoutY="15.0" prefHeight="30.0" prefWidth="236.0" style="-fx-font-size: 25;" text="All For Kids Users" textFill="WHITE" AnchorPane.bottomAnchor="15.0" AnchorPane.topAnchor="15.0" />
+            <HBox layoutX="833.9000244140625" layoutY="10.899999618530273" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <padding>
+                  <Insets right="12.0" />
+               </padding>
+            </HBox>
+            <JFXButton layoutX="940.0" layoutY="17.0" onAction="#goToMainMenu" styleClass="primary-btn" text="Main Menu" AnchorPane.rightAnchor="17.0" AnchorPane.topAnchor="17.0" />
+         </children>
+      </AnchorPane>
+      <HBox layoutY="61.0" prefHeight="45.0" prefWidth="1024.0">
+         <children>
+            <JFXButton onAction="#goToAdd" styleClass="green-btn" text="Add User">
+               <HBox.margin>
+                  <Insets bottom="7.0" left="7.0" right="7.0" top="7.0" />
+               </HBox.margin>
+            </JFXButton>
+            <JFXButton onAction="#deleteClicked" styleClass="red-btn" text="Delete">
+               <HBox.margin>
+                  <Insets bottom="7.0" left="7.0" right="7.0" top="7.0" />
+               </HBox.margin>
+            </JFXButton>
+         </children>
+      </HBox>
+      <TableView fx:id="usersTableView" editable="true" layoutY="105.0" prefHeight="495.0" prefWidth="1024.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="105.0">
+        <columns>
+          <TableColumn fx:id="usernameCol" onEditCommit="#inputModified" prefWidth="118.0" text="Username" />
+          <TableColumn fx:id="firstNameCol" minWidth="8.0" onEditCommit="#inputModified" prefWidth="153.0" text="First Name" />
+            <TableColumn fx:id="lastNameCol" onEditCommit="#inputModified" prefWidth="138.0" text="Last Name" />
+            <TableColumn fx:id="addressCol" onEditCommit="#inputModified" prefWidth="144.0" text="Address" />
+            <TableColumn fx:id="phoneCol" onEditCommit="#inputModified" prefWidth="172.0" text="Phone" />
+            <TableColumn fx:id="mailCol" onEditCommit="#inputModified" prefWidth="152.0" text="E-mail" />
+            <TableColumn fx:id="rolCol" onEditCommit="#roleModified" prefWidth="146.0" text="Role" />
+        </columns>
+         <padding>
+            <Insets left="-1.0" right="-1.0" />
+         </padding>
+      </TableView>
+   </children>
+</AnchorPane>
