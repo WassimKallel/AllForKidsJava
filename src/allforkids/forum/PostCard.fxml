@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<HBox prefWidth="1000.0" styleClass="card" stylesheets="@forum.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="allforkids.forum.PostCardController">
+   <children>
+      <VBox style="-fx-border-color: #428bca; -fx-border-radius: 5 0 0 5;">
+         <children>
+            <AnchorPane fx:id="avatarContainer" prefHeight="120.0" prefWidth="120.0">
+               <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </VBox.margin>
+            </AnchorPane>
+            <Label fx:id="userAvatarNameLabel" alignment="TOP_CENTER" prefHeight="17.0" prefWidth="140.0" styleClass="user-avatar-label" text="Label" textAlignment="CENTER" textOverrun="CLIP" />
+            <Label fx:id="roleLabel" alignment="TOP_CENTER" prefHeight="17.0" prefWidth="140.0" text="Label" textAlignment="CENTER" textOverrun="CLIP" />
+            <JFXButton fx:id="reportBtn" onAction="#reportClicked" prefHeight="27.0" prefWidth="129.0" style="-fx-background-color: #f44242;" text="Report" textAlignment="CENTER" textFill="WHITE">
+               <VBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </VBox.margin>
+            </JFXButton>
+         </children>
+      </VBox>
+      <BorderPane prefHeight="237.0" prefWidth="838.0" style="-fx-border-radius: 0 5 5 0; -fx-border-color: #428bca;">
+         <bottom>
+            <AnchorPane prefHeight="40.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label fx:id="postMetaLabel" alignment="CENTER_RIGHT" styleClass="card-subtitle" text="metaLabel" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+               </children>
+            </AnchorPane>
+         </bottom>
+         <center>
+            <AnchorPane prefHeight="40.0" styleClass="post-content" BorderPane.alignment="CENTER">
+               <children>
+                  <Text fx:id="postContent" fill="#464646" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="post-content" text="Text" wrappingWidth="730.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <font>
+                        <Font name="Helvetica" size="14.0" />
+                     </font></Text>
+               </children>
+            </AnchorPane>
+         </center>
+         <right>
+            <BorderPane prefHeight="159.0" prefWidth="70.0" BorderPane.alignment="CENTER">
+               <top>
+                  <JFXButton fx:id="upArrowBtn" onAction="#upVote" text="▲" textFill="#979797" BorderPane.alignment="CENTER">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </JFXButton>
+               </top>
+               <center>
+                  <Label fx:id="voteCounter" text="0" textFill="#979797" BorderPane.alignment="CENTER">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+               </center>
+               <bottom>
+                  <JFXButton fx:id="downArrowBtn" onAction="#downVote" text="▼" textFill="#979797" BorderPane.alignment="CENTER">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </JFXButton>
+               </bottom>
+               <padding>
+                  <Insets bottom="20.0" left="5.0" right="5.0" top="20.0" />
+               </padding>
+            </BorderPane>
+         </right>
+      </BorderPane>
+   </children>
+</HBox>

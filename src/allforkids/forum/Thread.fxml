@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox prefHeight="600.0" prefWidth="1024.0" stylesheets="@forum.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="allforkids.forum.ThreadController">
+   <children>
+      <AnchorPane id="AnchorPane" style="-fx-background-color: gray;">
+         <children>
+            <Label fx:id="mainTitleLabel" layoutX="14.0" layoutY="15.0" prefHeight="30.0" prefWidth="881.0" style="-fx-font-size: 25;" text="All For Kids Forum" textFill="WHITE" AnchorPane.bottomAnchor="15.0" AnchorPane.topAnchor="15.0" />
+            <JFXButton fx:id="backBtn" layoutX="940.0" layoutY="17.0" onAction="#backToTopic" styleClass="primary-btn" text="Back to forum" AnchorPane.rightAnchor="17.0" AnchorPane.topAnchor="17.0" />
+         </children>
+      </AnchorPane>
+      <ScrollPane fx:id="allPostSP" hbarPolicy="NEVER" pickOnBounds="false" prefHeight="540.0" prefWidth="1024.0">
+         <content>
+            <VBox fx:id="allPostVBox" prefWidth="1000.0" />
+         </content></ScrollPane>
+   </children>
+</VBox>

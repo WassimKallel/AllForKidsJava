@@ -1,0 +1,63 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Apr 17, 2018, 1:12:15 PM
+    Author     : Wassim
+*/
+
+.card-title {
+    -fx-padding : 10px;
+    -fx-text-fill: #428bca;
+}
+
+
+.card-subtitle {
+    -fx-padding : 12px;
+    -fx-text-fill: gray;
+}
+
+.card {
+    -fx-background-radius: 10;
+    -fx-border-insets: 10px;
+    -fx-border-color: #d3d3d3;
+    -fx-border-radius: 5;
+}
+
+.primary-btn {
+    -jfx-button-type: FLAT; 
+    -fx-background-color: #428bca; 
+    -fx-text-fill: white;
+}
+
+.green-btn {
+    -jfx-button-type: FLAT; 
+    -fx-background-color: green; 
+    -fx-text-fill: white;
+}
+
+.user-avatar {
+    -fx-padding : 12px;
+}
+.user-avatar-label {
+    -fx-padding : 12px;
+    -fx-text-fill: #428bca;
+}
+
+.post-content {
+    -fx-padding: 15px;
+}
+
+
+.red-vote {
+    -fx-text-fill: #bf0000;
+}
+.green-vote {
+    -fx-text-fill: #009628;
+}
+
+.gray-vote {
+    -fx-text-fill: gray;
+}
