@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="1024.0" stylesheets="@stats.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="allforkids.dashboard.stats.StatsController">
+   <children>
+      <BorderPane prefHeight="60.0" prefWidth="1024.0" style="-fx-background-color: gray;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <left>
+            <Label text="All for kids statistics" textFill="#e8e8e8" BorderPane.alignment="CENTER">
+               <font>
+                  <Font size="25.0" />
+               </font>
+               <BorderPane.margin>
+                  <Insets />
+               </BorderPane.margin>
+               <padding>
+                  <Insets left="20.0" />
+               </padding>
+            </Label>
+         </left>
+         <right>
+            <JFXButton onAction="#goToMainMenu" styleClass="primary-btn" text="Main Menu" BorderPane.alignment="CENTER">
+               <BorderPane.margin>
+                  <Insets bottom="17.0" left="17.0" right="17.0" top="17.0" />
+               </BorderPane.margin>
+            </JFXButton>
+         </right>
+      </BorderPane>
+      <VBox layoutY="69.0" prefHeight="540.0" prefWidth="1024.0">
+         <children>
+            <HBox prefHeight="270.0" prefWidth="1024.0">
+               <children>
+                  <BorderPane prefWidth="200.0" style="-fx-border-color: #428bca; -fx-border-radius: 5px;">
+                     <top>
+                        <Label fx:id="user" text="Total Users" textAlignment="CENTER" textFill="#428bca" BorderPane.alignment="CENTER">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                           <BorderPane.margin>
+                              <Insets bottom="10.0" top="20.0" />
+                           </BorderPane.margin>
+                        </Label>
+                     </top>
+                     <center>
+                        <Label fx:id="usersLabel" text="50 User" textFill="#00ab36" BorderPane.alignment="CENTER">
+                           <font>
+                              <Font size="30.0" />
+                           </font>
+                        </Label>
+                     </center>
+                     <HBox.margin>
+                        <Insets left="25.0" right="25.0" />
+                     </HBox.margin>
+                  </BorderPane>
+                  <BorderPane prefWidth="200.0" style="-fx-border-color: #428bca; -fx-border-radius: 5px;">
+                     <HBox.margin>
+                        <Insets left="25.0" right="25.0" />
+                     </HBox.margin>
+                     <top>
+                        <Label text="Total Store Products" textAlignment="CENTER" textFill="#428bca" BorderPane.alignment="CENTER">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                           <BorderPane.margin>
+                              <Insets bottom="10.0" top="20.0" />
+                           </BorderPane.margin>
+                        </Label>
+                     </top>
+                     <center>
+                        <Label fx:id="productsLabel" text="50 Posts" textFill="#00ab36" BorderPane.alignment="CENTER">
+                           <font>
+                              <Font size="30.0" />
+                           </font>
+                        </Label>
+                     </center>
+                  </BorderPane>
+                  <BorderPane prefWidth="200.0" style="-fx-border-color: #428bca; -fx-border-radius: 5px;">
+                     <top>
+                        <Label text="Total Orders" textAlignment="CENTER" textFill="#428bca" BorderPane.alignment="CENTER">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                           <BorderPane.margin>
+                              <Insets bottom="10.0" top="20.0" />
+                           </BorderPane.margin>
+                        </Label>
+                     </top>
+                     <center>
+                        <Label fx:id="ordersLabel" text="50 Posts" textFill="#00ab36" BorderPane.alignment="CENTER">
+                           <font>
+                              <Font size="30.0" />
+                           </font>
+                        </Label>
+                     </center>
+                     <HBox.margin>
+                        <Insets left="25.0" right="25.0" />
+                     </HBox.margin>
+                  </BorderPane>
+                  <BorderPane prefWidth="200.0" style="-fx-border-color: #428bca; -fx-border-radius: 5px;">
+                     <top>
+                        <Label text="Total Income" textAlignment="CENTER" textFill="#428bca" BorderPane.alignment="CENTER">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                           <BorderPane.margin>
+                              <Insets bottom="10.0" top="20.0" />
+                           </BorderPane.margin>
+                        </Label>
+                     </top>
+                     <center>
+                        <Label fx:id="incomeLabel" text="50 Posts" textFill="#00ab36" BorderPane.alignment="CENTER">
+                           <font>
+                              <Font size="30.0" />
+                           </font>
+                        </Label>
+                     </center>
+                     <HBox.margin>
+                        <Insets left="25.0" right="25.0" />
+                     </HBox.margin>
+                  </BorderPane>
+               </children>
+               <padding>
+                  <Insets bottom="50.0" left="50.0" right="50.0" top="50.0" />
+               </padding>
+            </HBox>
+            <HBox prefHeight="270.0" prefWidth="1024.0">
+               <children>
+                  <BorderPane prefWidth="200.0" style="-fx-border-color: #428bca; -fx-border-radius: 5px;">
+                     <HBox.margin>
+                        <Insets left="25.0" right="25.0" />
+                     </HBox.margin>
+                     <top>
+                        <Label text="Total Blog Posts" textAlignment="CENTER" textFill="#428bca" BorderPane.alignment="CENTER">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                           <BorderPane.margin>
+                              <Insets bottom="10.0" top="20.0" />
+                           </BorderPane.margin>
+                        </Label>
+                     </top>
+                     <center>
+                        <Label fx:id="blogPostsLabel" text="50 Posts" textFill="#00ab36" BorderPane.alignment="CENTER">
+                           <font>
+                              <Font size="30.0" />
+                           </font>
+                        </Label>
+                     </center>
+                  </BorderPane>
+                  <BorderPane prefWidth="200.0" style="-fx-border-color: #428bca; -fx-border-radius: 5px;">
+                     <top>
+                        <Label text="Total Blog Comments" textAlignment="CENTER" textFill="#428bca" BorderPane.alignment="CENTER">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                           <BorderPane.margin>
+                              <Insets bottom="10.0" top="20.0" />
+                           </BorderPane.margin>
+                        </Label>
+                     </top>
+                     <center>
+                        <Label fx:id="commentsLabel" text="50 Posts" textFill="#00ab36" BorderPane.alignment="CENTER">
+                           <font>
+                              <Font size="30.0" />
+                           </font>
+                        </Label>
+                     </center>
+                     <HBox.margin>
+                        <Insets left="25.0" right="25.0" />
+                     </HBox.margin>
+                  </BorderPane>
+                  <BorderPane prefWidth="200.0" style="-fx-border-color: #428bca; -fx-border-radius: 5px;">
+                     <top>
+                        <Label text="Total Forum Posts" textAlignment="CENTER" textFill="#428bca" BorderPane.alignment="CENTER">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                           <BorderPane.margin>
+                              <Insets bottom="10.0" top="20.0" />
+                           </BorderPane.margin>
+                        </Label>
+                     </top>
+                     <center>
+                        <Label fx:id="postsLabel" text="50 User" textFill="#00ab36" BorderPane.alignment="CENTER">
+                           <font>
+                              <Font size="30.0" />
+                           </font>
+                        </Label>
+                     </center>
+                     <HBox.margin>
+                        <Insets left="25.0" right="25.0" />
+                     </HBox.margin>
+                  </BorderPane>
+                  <BorderPane prefWidth="200.0" style="-fx-border-color: #428bca; -fx-border-radius: 5px;">
+                     <top>
+                        <Label text="Total Forum Threads" textAlignment="CENTER" textFill="#428bca" BorderPane.alignment="CENTER">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                           <BorderPane.margin>
+                              <Insets bottom="10.0" top="20.0" />
+                           </BorderPane.margin>
+                        </Label>
+                     </top>
+                     <center>
+                        <Label fx:id="threadsLabel" text="50 Posts" textFill="#00ab36" BorderPane.alignment="CENTER">
+                           <font>
+                              <Font size="30.0" />
+                           </font>
+                        </Label>
+                     </center>
+                     <HBox.margin>
+                        <Insets left="25.0" right="25.0" />
+                     </HBox.margin>
+                  </BorderPane>
+               </children>
+               <padding>
+                  <Insets bottom="50.0" left="50.0" right="50.0" top="50.0" />
+               </padding>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
