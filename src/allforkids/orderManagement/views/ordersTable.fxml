@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXTreeTableView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" maxHeight="600.0" maxWidth="1024.0" minHeight="600.0" minWidth="1024.0" prefHeight="600.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="allforkids.orderManagement.controllers.OrdersTableController">
+   <children>
+      <BorderPane layoutX="10.0" layoutY="10.0" prefHeight="60.0" prefWidth="1024.0" style="-fx-background-color: gray;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <left>
+            <Label text="Order management" textFill="#e8e8e8" BorderPane.alignment="CENTER">
+               <font>
+                  <Font size="30.0" />
+               </font>
+               <BorderPane.margin>
+                  <Insets />
+               </BorderPane.margin>
+               <padding>
+                  <Insets left="20.0" />
+               </padding>
+            </Label>
+         </left>
+         <right>
+            <HBox prefHeight="60.0" BorderPane.alignment="CENTER">
+               <children>
+                  <JFXTextField fx:id="inputField" promptText="search" />
+                  <JFXButton fx:id="filterButton" styleClass="primary-btn" text="Filter/Search">
+                     <HBox.margin>
+                        <Insets bottom="12.0" left="5.0" right="5.0" top="12.0" />
+                     </HBox.margin>
+                  </JFXButton>
+                  <JFXButton fx:id="goToMain" onAction="#goToMain" styleClass="primary-btn" text="Back to main">
+                     <HBox.margin>
+                        <Insets bottom="12.0" left="5.0" right="12.0" top="12.0" />
+                     </HBox.margin>
+                  </JFXButton>
+               </children>
+            </HBox>
+         </right>
+      </BorderPane>
+      
+      <BorderPane layoutX="-12.0" layoutY="-3.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="60.0">
+         <center>
+            <JFXTreeTableView fx:id="treeView" prefHeight="539.0" prefWidth="1024.0" BorderPane.alignment="CENTER" />
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>
