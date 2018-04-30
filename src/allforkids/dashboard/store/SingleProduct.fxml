@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.web.HTMLEditor?>
+
+<AnchorPane id="AnchorPane" maxHeight="600.0" maxWidth="1024.0" minHeight="600.0" minWidth="1024.0" prefHeight="600.0" prefWidth="1024.0" stylesheets="@store.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="allforkids.dashboard.store.SingleProductController">
+   <children>
+      <AnchorPane id="AnchorPane" layoutX="10.0" layoutY="14.0" prefHeight="60.0" prefWidth="1024.0" style="-fx-background-color: gray;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label layoutX="14.0" layoutY="15.0" prefHeight="30.0" prefWidth="236.0" style="-fx-font-size: 25;" text="All For Kids Store" textFill="WHITE" AnchorPane.bottomAnchor="15.0" AnchorPane.topAnchor="15.0" />
+            <HBox layoutX="833.9000244140625" layoutY="10.899999618530273" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <padding>
+                  <Insets right="12.0" />
+               </padding>
+            </HBox>
+            <JFXButton layoutX="940.0" layoutY="17.0" onAction="#backToProductsList" styleClass="primary-btn" text="Back to Products List" AnchorPane.rightAnchor="17.0" AnchorPane.topAnchor="17.0" />
+         </children>
+      </AnchorPane>
+      <VBox layoutX="566.0" layoutY="111.0" prefHeight="483.0" prefWidth="444.0">
+         <children>
+            <JFXTextField fx:id="nameTF" labelFloat="true" promptText="Name">
+               <font>
+                  <Font name="Roboto Medium" size="14.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+               </VBox.margin>
+            </JFXTextField>
+            <JFXTextField fx:id="referenceTF" labelFloat="true" promptText="Reference">
+               <font>
+                  <Font name="Roboto Medium" size="14.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+               </VBox.margin>
+            </JFXTextField>
+            <JFXTextField fx:id="unitPriceTf" labelFloat="true" promptText="Unit Price">
+               <font>
+                  <Font name="Roboto Medium" size="14.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+               </VBox.margin>
+            </JFXTextField>
+            <JFXTextField fx:id="vatTF" labelFloat="true" promptText="VAT">
+               <font>
+                  <Font name="Roboto Medium" size="14.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+               </VBox.margin>
+            </JFXTextField>
+            <JFXTextField fx:id="quantityTF" labelFloat="true" promptText="Quantity">
+               <font>
+                  <Font name="Roboto Medium" size="14.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+               </VBox.margin>
+            </JFXTextField>
+            <JFXTextField fx:id="descriptionTF" labelFloat="true" promptText="Description">
+               <font>
+                  <Font name="Roboto Medium" size="14.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+               </VBox.margin>
+            </JFXTextField>
+            <JFXComboBox fx:id="categoryDropDown" prefHeight="27.0" prefWidth="570.0" promptText="Category">
+               <VBox.margin>
+                  <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+               </VBox.margin>
+            </JFXComboBox>
+            <JFXButton fx:id="validateBtn" onAction="#addProduct" prefHeight="35.0" prefWidth="508.0" styleClass="primary-btn" text="Add">
+               <VBox.margin>
+                  <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+               </VBox.margin>
+            </JFXButton>
+         </children>
+      </VBox>
+      <Label fx:id="title" layoutX="387.0" layoutY="60.0" text="Add a new Product" textFill="#080808">
+         <font>
+            <Font size="28.0" />
+         </font>
+      </Label>
+      <VBox layoutX="10.0" layoutY="125.0" prefHeight="445.0" prefWidth="553.0">
+         <children>
+            <Label text="Picture" textFill="#575757">
+               <VBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </VBox.margin>
+            </Label>
+            <AnchorPane fx:id="imageContainer" onMouseClicked="#uploadPic" prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <Label fx:id="noImageLabel" layoutX="109.0" layoutY="84.0" text="Click To Insert Picture" />
+               </children>
+               <VBox.margin>
+                  <Insets left="100.0" right="100.0" />
+               </VBox.margin>
+            </AnchorPane>
+            <Label text="Long Description" textFill="#575757">
+               <VBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </VBox.margin>
+            </Label>
+            <HTMLEditor fx:id="longDescriptionEditor" htmlText="&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body contenteditable=&quot;true&quot;&gt;&lt;/body&gt;&lt;/html&gt;" prefHeight="217.0" prefWidth="553.0" />
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

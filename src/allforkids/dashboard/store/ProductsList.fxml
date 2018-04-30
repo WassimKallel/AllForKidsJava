@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+
+<AnchorPane id="AnchorPane" maxHeight="600.0" maxWidth="1024.0" minHeight="600.0" minWidth="1024.0" prefHeight="600.0" prefWidth="1024.0" stylesheets="@store.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="allforkids.dashboard.store.ProductsListController">
+   <children>
+      <AnchorPane id="AnchorPane" layoutY="4.0" prefHeight="60.0" prefWidth="1024.0" style="-fx-background-color: gray;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label layoutX="14.0" layoutY="15.0" prefHeight="30.0" prefWidth="236.0" style="-fx-font-size: 25;" text="All For Kids Store" textFill="WHITE" AnchorPane.bottomAnchor="15.0" AnchorPane.topAnchor="15.0" />
+            <HBox layoutX="833.9000244140625" layoutY="10.899999618530273" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <padding>
+                  <Insets right="12.0" />
+               </padding>
+            </HBox>
+            <JFXButton layoutX="940.0" layoutY="17.0" onAction="#goToMainMenu" styleClass="primary-btn" text="Main Menu" AnchorPane.rightAnchor="17.0" AnchorPane.topAnchor="17.0" />
+         </children>
+      </AnchorPane>
+      <BorderPane layoutY="61.0" prefHeight="45.0" prefWidth="1024.0">
+         <center>
+            <HBox prefHeight="45.0" prefWidth="676.0">
+               <children>
+                  <JFXButton onAction="#goToAdd" styleClass="green-btn" text="Add">
+                     <HBox.margin>
+                        <Insets bottom="7.0" left="7.0" right="7.0" top="7.0" />
+                     </HBox.margin>
+                  </JFXButton>
+                  <JFXButton onAction="#editClicked" styleClass="primary-btn" text="Edit">
+                     <HBox.margin>
+                        <Insets bottom="7.0" left="7.0" right="7.0" top="7.0" />
+                     </HBox.margin>
+                  </JFXButton>
+                  <JFXButton onAction="#deleteClicked" styleClass="red-btn" text="Delete">
+                     <HBox.margin>
+                        <Insets bottom="7.0" left="7.0" right="7.0" top="7.0" />
+                     </HBox.margin>
+                  </JFXButton>
+               </children>
+            </HBox>
+         </center>
+         <right>
+            <HBox BorderPane.alignment="CENTER">
+               <BorderPane.margin>
+                  <Insets />
+               </BorderPane.margin>
+               <children>
+                  <JFXButton onAction="#goToStores" prefHeight="27.0" prefWidth="115.0" styleClass="primary-btn" text="Manage Stores">
+                     <HBox.margin>
+                        <Insets bottom="7.0" left="7.0" right="7.0" top="7.0" />
+                     </HBox.margin>
+                  </JFXButton>
+                  <JFXButton onAction="#goToCategories" prefHeight="27.0" prefWidth="144.0" styleClass="primary-btn" text="Manage Categories">
+                     <HBox.margin>
+                        <Insets bottom="7.0" left="7.0" right="7.0" top="7.0" />
+                     </HBox.margin>
+                  </JFXButton>
+               </children>
+            </HBox>
+         </right>
+      </BorderPane>
+      <TableView fx:id="productsTableView" editable="true" layoutY="105.0" prefHeight="495.0" prefWidth="1024.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="105.0">
+         <padding>
+            <Insets left="-1.0" right="-1.0" />
+         </padding>
+         <columns>
+            <TableColumn fx:id="refCol" prefWidth="55.0" text="Ref" />
+            <TableColumn fx:id="nameCol" prefWidth="332.0" text="Name" />
+            <TableColumn fx:id="categoryCol" prefWidth="111.0" text="Category" />
+            <TableColumn fx:id="unitPriceCol" prefWidth="219.0" text="Unit Price" />
+            <TableColumn fx:id="descriptionCol" prefWidth="308.0" text="Short Description" />
+         </columns>
+      </TableView>
+   </children>
+</AnchorPane>
