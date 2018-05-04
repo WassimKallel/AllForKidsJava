@@ -53,7 +53,7 @@
                   </Label>
                   <Label fx:id="deliveryAddress" prefHeight="0.0" prefWidth="300.0" style="-fx-border-color: #428bca; -fx-border-radius: 5px;" text="address">
                      <VBox.margin>
-                        <Insets top="5.0" />
+                        <Insets top="10.0" />
                      </VBox.margin>
                      <padding>
                         <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
@@ -81,15 +81,7 @@
                   </JFXComboBox>
                   <Label contentDisplay="BOTTOM" prefHeight="0.0" prefWidth="300.0" style="-fx-border-color: #428bca; -fx-border-radius: 5px;" text="Total">
                      <VBox.margin>
-                        <Insets top="5.0" />
-                     </VBox.margin>
-                     <padding>
-                        <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
-                     </padding>
-                  </Label>
-                  <Label fx:id="totalAmount" contentDisplay="BOTTOM" layoutX="10.0" layoutY="198.0" prefHeight="0.0" prefWidth="300.0" style="-fx-border-color: #428bca; -fx-border-radius: 5px;" text="Total">
-                     <VBox.margin>
-                        <Insets top="5.0" />
+                        <Insets top="10.0" />
                      </VBox.margin>
                      <padding>
                         <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
@@ -97,7 +89,7 @@
                   </Label>
                   <Label prefHeight="0.0" prefWidth="300.0" style="-fx-border-color: #428bca; -fx-border-radius: 5px;" text="VAT">
                      <VBox.margin>
-                        <Insets top="5.0" />
+                        <Insets top="10.0" />
                      </VBox.margin>
                      <padding>
                         <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
@@ -105,7 +97,7 @@
                   </Label>
                   <Label fx:id="vatAmount" layoutX="10.0" layoutY="235.0" prefHeight="0.0" prefWidth="300.0" style="-fx-border-color: #428bca; -fx-border-radius: 5px;" text="VAT">
                      <VBox.margin>
-                        <Insets top="5.0" />
+                        <Insets top="10.0" />
                      </VBox.margin>
                      <padding>
                         <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
@@ -113,7 +105,7 @@
                   </Label>
                   <Label fx:id="deliveryFeeLabel" prefHeight="0.0" prefWidth="300.0" style="-fx-border-color: #428bca; -fx-border-radius: 5px;" text="Delivery fee">
                      <VBox.margin>
-                        <Insets top="5.0" />
+                        <Insets top="10.0" />
                      </VBox.margin>
                      <padding>
                         <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
@@ -121,7 +113,7 @@
                   </Label>
                   <Label fx:id="deliveryFeeAmount" prefHeight="0.0" prefWidth="300.0" style="-fx-border-color: #428bca; -fx-border-radius: 5px;" text="Delivery fee">
                      <VBox.margin>
-                        <Insets top="5.0" />
+                        <Insets top="10.0" />
                      </VBox.margin>
                      <padding>
                         <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
@@ -129,7 +121,7 @@
                   </Label>
                   <Label prefHeight="0.0" prefWidth="300.0" style="-fx-border-color: #428bca; -fx-border-radius: 5px;" text="Total to Pay">
                      <VBox.margin>
-                        <Insets top="5.0" />
+                        <Insets top="10.0" />
                      </VBox.margin>
                      <padding>
                         <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
@@ -137,7 +129,7 @@
                   </Label>
                   <Label fx:id="totalAmount" prefHeight="0.0" prefWidth="300.0" style="-fx-border-color: #428bca; -fx-border-radius: 5px;" text="total Amount">
                      <VBox.margin>
-                        <Insets top="5.0" />
+                        <Insets top="10.0" />
                      </VBox.margin>
                      <padding>
                         <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
