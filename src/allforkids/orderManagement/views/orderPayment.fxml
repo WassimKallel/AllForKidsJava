@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" maxHeight="600.0" maxWidth="1024.0" minHeight="600.0" minWidth="1024.0" prefHeight="600.0" prefWidth="1024.0" stylesheets="@shopping.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="allforkids.orderManagement.controllers.OrderPaymentController">
+   <children>
+      <BorderPane layoutX="10.0" layoutY="10.0" prefHeight="60.0" prefWidth="1024.0" style="-fx-background-color: gray;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <left>
+            <Label text="Order Payment" textFill="#e8e8e8" BorderPane.alignment="CENTER">
+               <font>
+                  <Font size="25.0" />
+               </font>
+               <BorderPane.margin>
+                  <Insets />
+               </BorderPane.margin>
+               <padding>
+                  <Insets left="20.0" />
+               </padding>
+            </Label>
+         </left>
+         <right>
+            <HBox prefHeight="60.0" BorderPane.alignment="CENTER">
+               <children>
+                  <JFXButton fx:id="goToMain" onAction="#goToMain" styleClass="primary-btn" text="Back to Main ">
+                     <HBox.margin>
+                        <Insets bottom="12.0" left="5.0" right="12.0" top="12.0" />
+                     </HBox.margin>
+                  </JFXButton>
+               </children>
+            </HBox>
+         </right>
+      </BorderPane>
+      <VBox AnchorPane.leftAnchor="300.0" AnchorPane.rightAnchor="300.0" AnchorPane.topAnchor="80.0">
+         <children>
+            <JFXComboBox fx:id="comboPaymentMethod" labelFloat="true" onAction="#selectPaymentMethod" prefWidth="380.0" promptText="Payment Method">
+               <VBox.margin>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </VBox.margin>
+            </JFXComboBox>
+            <Label prefWidth="380.0" text="Total to Pay">
+               <VBox.margin>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </VBox.margin>
+            </Label>
+            <Label fx:id="totalAmount" prefWidth="380.0" text="total Amount">
+               <VBox.margin>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </VBox.margin>
+            </Label>
+            <Label fx:id="banking" disable="true" prefWidth="380.0" text="Banking ...">
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+               <font>
+                  <Font name="SansSerif Bold" size="16.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../uploads/animation/benny.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <VBox.margin>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </VBox.margin>
+            </Label>
+            <JFXButton fx:id="checkoutPayment" onAction="#validatePayment" prefWidth="380.0" style="-fx-background-color: green;" styleClass="primary-btn" text="Validate Payment" textFill="WHITE">
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </VBox.margin>
+            </JFXButton>
+            <Label fx:id="lbl_msg" alignment="CENTER" nodeOrientation="RIGHT_TO_LEFT" prefHeight="42.0" prefWidth="496.0" text="Payment Complete" visible="false">
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+               <font>
+                  <Font name="SansSerif Bold" size="16.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../ScanningAnimation/src/images/smile.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Label>
+         </children>
+      </VBox>
+      <HBox layoutX="194.0" layoutY="466.0" prefHeight="60.0" prefWidth="629.0">
+         <children>
+            <ImageView fx:id="img1" fitHeight="45.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../ScanningAnimation/src/images/clock.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="lbl1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="4.0" prefWidth="100.0" />
+            <ImageView fx:id="img2" fitHeight="45.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../ScanningAnimation/src/images/clock.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="lbl2" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="4.0" prefWidth="100.0" />
+            <ImageView fx:id="img3" fitHeight="45.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../ScanningAnimation/src/images/clock.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="lbl3" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="4.0" prefWidth="100.0" />
+            <ImageView fx:id="img4" fitHeight="45.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../ScanningAnimation/src/images/clock.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="lbl4" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="4.0" prefWidth="100.0" />
+            <ImageView fx:id="img5" fitHeight="45.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../ScanningAnimation/src/images/clock.png" />
+               </image>
+            </ImageView>
+         </children>
+      </HBox>
+      <Text fx:id="text1" layoutX="183.0" layoutY="550.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="72.13671875">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Text>
+      <Text fx:id="text2" layoutX="329.0" layoutY="550.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="72.13671875">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Text>
+      <Text fx:id="text3" layoutX="476.0" layoutY="550.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="72.13671875">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Text>
+      <Text fx:id="text4" layoutX="617.0" layoutY="551.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="72.13671875">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Text>
+      <Text fx:id="text5" layoutX="764.0" layoutY="550.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="72.13671875">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>

@@ -9,6 +9,7 @@ import allforkids.userManagement.models.User;
 import allforkids.orderManagement.models.*;
 import allforkids.userManagement.models.UserSession;
 import com.jfoenix.controls.JFXButton;
+import dopsie.core.Model;
 import dopsie.exceptions.ModelException;
 import dopsie.exceptions.UnsupportedDataTypeException;
 import helpers.DopsieCellBuilder;
@@ -31,6 +32,8 @@ import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.image.ImageView;
+import static javafx.scene.input.KeyCode.S;
+import static javafx.scene.input.KeyCode.T;
 import javafx.util.Callback;
 
 /**
@@ -57,7 +60,7 @@ public class ShoppingCartController implements Initializable {
     @FXML
     private Label nbrItem;
     @FXML
-    private JFXButton filterButton1;
+    private JFXButton checkoutButton;
     @FXML
     private Label totalHT;
     @FXML
@@ -69,12 +72,12 @@ public class ShoppingCartController implements Initializable {
     private Label shippementLabel;
     @FXML
     private Label shippementFee;
-    
+
     @FXML
     private Label totalTTC;
 
     private ArrayList<LineItem> allLineItems;
-    
+
     /**
      * Initializes the controller class.
      */
@@ -87,7 +90,7 @@ public class ShoppingCartController implements Initializable {
 
         User currentUser = null;
         Order shoppingCart = null;
-        
+
         try {
             currentUser = UserSession.getInstance();
             shoppingCart = currentUser.getUserShoppingCart();
@@ -95,30 +98,24 @@ public class ShoppingCartController implements Initializable {
             Logger.getLogger(ShoppingCartController.class.getName()).log(Level.SEVERE, null, ex);
         }
         String absolutePath = System.getProperty("uploads_folder");
-        
+
         try {
             allLineItems = shoppingCart.lineItems();
             nbrItem.setText("Number of Items : " + allLineItems.size());
             totalHT.setText("VAT.free Total : " + shoppingCart.getOrderTotalWithVAT());
             totalTTC.setText("Total TTC : " + shoppingCart.getOrderTotalWithVAT());
-            shippementLabel.setText("Shipping Type : " + shoppingCart.shippingMethod().getMethodName());
-            shippementFee.setText("shippementFee : " + shoppingCart.shippingMethod().getFee());
+//            shippementLabel.setText("Shipping Type : " + shoppingCart.shippingMethod().getMethodName());
+//            shippementFee.setText("shippement Fee : " + shoppingCart.shippingMethod().getFee());
         } catch (ModelException ex) {
             Logger.getLogger(ShoppingCartController.class.getName()).log(Level.SEVERE, null, ex);
         }
 
         ShoppingitemList = FXCollections.observableArrayList(allLineItems);
-        
+
         // product item image column
         imageItemColumn.setCellValueFactory(new DopsieCellBuilder(p -> {
             try {
-                String path;
-                String imageRelPath = (String)((LineItem)p).product().getAttr("image");
-                if(!imageRelPath.isEmpty() && imageRelPath != null) {
-                    path = "file:" + absolutePath + imageRelPath;
-                } else {
-                    path = "/img/default-product.png";
-                }
+                String path = "file:" + absolutePath + (String) ((LineItem) p).product().getAttr("image");
                 ImageView productImage = new ImageView(path);
                 productImage.setFitHeight(100);
                 productImage.setFitWidth(100);
@@ -134,7 +131,7 @@ public class ShoppingCartController implements Initializable {
         // produc (description + unit price) column
         descriptionAndPriceColumn.setCellValueFactory(new DopsieCellBuilder(p -> {
             try {
-                return ((LineItem) p).product().getAttr("short_description") + " : " +((LineItem) p).product().getAttr("unit_price");
+                return ((LineItem) p).product().getAttr("short_description") + " : " + ((LineItem) p).product().getAttr("unit_price");
             } catch (ModelException ex) {
                 Logger.getLogger(ShoppingCartController.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -142,21 +139,21 @@ public class ShoppingCartController implements Initializable {
         }));
 
         quantityColumn.setEditable(true);
-        
+
         // Quantity Spinner Column 
         quantityColumn.setCellValueFactory(new DopsieCellBuilder(p -> {
-            int quantity = (int)((LineItem)p).getAttr("quantity");
+            int quantity = (int) ((LineItem) p).getAttr("quantity");
             return quantity;
         }));
         quantityColumn.setCellFactory(tc -> {
-                return new SpinnerTableCell<>(20, (a,b) -> updatedQuantity(a,b), 1);
-            }
+            return new SpinnerTableCell<>(20, (a, b) -> updatedQuantity(a, b), 1);
+        }
         );
 
         // Total  Column 
         totalItemRowColumn.setCellValueFactory(new DopsieCellBuilder(p -> {
             try {
-                int quantity = (int)((LineItem)p).getAttr("quantity");
+                int quantity = (int) ((LineItem) p).getAttr("quantity");
                 double unitPrice = (double) ((LineItem) p).product().getAttr("unit_price");
                 return quantity * unitPrice;
             } catch (ModelException ex) {
@@ -197,40 +194,51 @@ public class ShoppingCartController implements Initializable {
         itemsTableView.setEditable(true);
 
     }
-    
+
     private void updatedQuantity(LineItem item, Integer diff) {
         try {
             try {
                 int indexOfItem = itemsTableView.getItems().indexOf(item);
-                int quantity = (Integer)item.getAttr("quantity") + diff;
+                int quantity = (Integer) item.getAttr("quantity") + diff;
                 System.out.println("quantity is " + quantity);
-                item.setAttr("quantity", quantity);
-                item.save();
+                //item.setAttr("quantity", quantity);
+                //item.setAttr("total", item.product().getAttr("unit-price"));
+                item.updateQuantity(quantity);
+                //item.save();
+
+                item.updateQuantity(quantity);
                 ShoppingitemList.set(indexOfItem, item);
             } catch (ModelException | UnsupportedDataTypeException ex) {
                 Logger.getLogger(ShoppingCartController.class.getName()).log(Level.SEVERE, null, ex);
             }
-            
+
             List<LineItem> allItems = itemsTableView.getItems();
-            
+
             User currentUser = UserSession.getInstance();
             Order shoppingCart = currentUser.getUserShoppingCart();
-            
+
             System.out.println(shoppingCart);
             allLineItems = shoppingCart.lineItems();
             System.out.println(allLineItems);
             nbrItem.setText("Number of Items : " + allLineItems.size());
             totalHT.setText("VAT.free Total : " + shoppingCart.getOrderTotalWithoutVAT());
             totalTTC.setText("Total TTC : " + shoppingCart.getOrderTotalWithVAT());
-            shippementLabel.setText("Shipping Type : " + shoppingCart.shippingMethod().getMethodName());
-            shippementFee.setText("shippementFee : " + shoppingCart.shippingMethod().getFee());
+//            shippementLabel.setText("Shipping Type : " + shoppingCart.shippingMethod().getMethodName());
+//            shippementFee.setText("shippementFee : " + shoppingCart.shippingMethod().getFee());
         } catch (ModelException | UnsupportedDataTypeException ex) {
             Logger.getLogger(ShoppingCartController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
+
     @FXML
     private void goToStore(ActionEvent event) {
         NavigationService.goTo(event, this, "/allforkids/store/ProductsList.fxml");
     }
+
+    @FXML
+    private void goToSummary(ActionEvent event) {
+        NavigationService.goTo(event, this, "/allforkids/orderManagement/views/orderSummary.fxml");
+    }
+
+
 }

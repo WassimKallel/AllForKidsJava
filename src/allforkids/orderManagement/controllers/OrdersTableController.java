@@ -264,8 +264,6 @@ public class OrdersTableController implements Initializable {
         
         Order od = Model.find(Order.class, Integer.parseInt(id));
         od.setOrderStatusByName(newStatus);
-//        System.out.println("order à modifier : "+od);
-//        od.setAttr("order_status", newStatus);
         od.save();
         
     }

@@ -23,7 +23,7 @@ public class Payment extends Model {
         return "id";
     }
 
-    enum PaymentStatus {
+   public enum PaymentStatus {
         DONE("Done"), DUE("Due"), PARTIAL("Partial");
         private String status;
 
@@ -37,20 +37,21 @@ public class Payment extends Model {
         }
     };
 
-    enum PaymentMethod {
-        PAYPAL("PayPal"), BITCOIN("BitCoin"), CREDITCARD("Credit Card"), CREDITPOINT("CeditPoint");
+  public  enum PaymentMethod {
+        PAYPAL("PayPal"), BITCOIN("BitCoin"), CREDITCARD("Credit Card"), CREDITPOINT("CreditPoint");
 
         private String method;
 
         PaymentMethod(String method) {
             this.method = method;
         }
-
-        @Override
-        public String toString() {
+        
+        public String paymentMethodName() {
             return method;
         }
     };
+    
+
 
     public Double getPaymentAmount() {
 

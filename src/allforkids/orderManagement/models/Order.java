@@ -7,6 +7,7 @@ package allforkids.orderManagement.models;
 
 import allforkids.userManagement.models.User;
 import allforkids.store.models.*;
+import static com.google.common.base.CharMatcher.is;
 import dopsie.core.Model;
 import dopsie.dataTypes.Date;
 import dopsie.exceptions.ModelException;
@@ -72,6 +73,27 @@ public class Order extends Model {
 
     public ShippingMethod shippingMethod() throws ModelException {
         return this.hasOne(ShippingMethod.class, "shipping_method_id");
+    }
+
+    public String getDeliveryAddress() throws ModelException {
+        String test = (String) this.getAttr("delivery_address");
+        String address = "";
+        if (test == null){
+          String  test1 = (String) this.customer().getAttr("address");
+            System.out.println(address.isEmpty());
+           if (test1 == null){
+                address = "You haven't yet specified an address";
+            }else{
+               address = test1;
+           }
+        
+        }
+        return address;
+    }
+
+    public void setDeliveryAddress(String address) throws UnsupportedDataTypeException, ModelException {
+        this.setAttr("delivery_address", address);
+        this.save();
     }
 
     //public Address deliveryAddress() throws ModelException{
@@ -224,7 +246,7 @@ public class Order extends Model {
         double vat = 0;
 
         for (LineItem l : this.lineItems()) {
-            double inter = (double) l.getAttr("vat_total");
+            double inter = (double) l.getAttr("vat");
             vat = inter + vat;
         }
 
@@ -247,7 +269,7 @@ public class Order extends Model {
         double sub = 0;
 
         for (LineItem l : this.lineItems()) {
-            double inter = (double) l.getAttr("sub_total");
+            double inter = (double) l.getAttr("total");
             sub = inter + sub;
         }
 
@@ -307,4 +329,29 @@ public class Order extends Model {
         this.save();
     }
 
+    public static ArrayList<ShippingMethod> getAllShippingMethod() throws ModelException, UnsupportedDataTypeException {
+        ArrayList<ShippingMethod> allShippingMethod = Model.fetch(ShippingMethod.class).all().execute();
+        return allShippingMethod;
+    }
+
+    public void setDeliveryMethodByName(String method) throws ModelException, UnsupportedDataTypeException {
+
+        getAllShippingMethod().forEach((m) -> {
+            if (m.getAttr("name").equals(method)) {
+                this.setAttr("shipping_method_id", (int) m.getAttr("id"));
+            }
+        });
+    }
+    
+    public void setOrderPaymentMethodByName(String method) throws ModelException, UnsupportedDataTypeException{
+        this.setAttr("payment_method", method);
+        this.save();
+    }
+    
+    public float getOrderShippementFee() throws ModelException{
+        return (float) this.shippingMethod().getAttr("extra_fee");
+    }
+
+    
+    
 }

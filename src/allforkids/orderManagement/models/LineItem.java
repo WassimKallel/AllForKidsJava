@@ -59,6 +59,16 @@ public class LineItem extends Model {
         
         
     }
+       
+     public  void updateQuantity(int qty) throws ModelException, UnsupportedDataTypeException {
+           Double unitPrice = (Double) this.product().getAttr("unit_price") ;
+           float vatRate = (float) this.product().getAttr("vat_rate");
+           this.setAttr("total", (unitPrice * qty));
+           this.setAttr("vat", (unitPrice * qty / 100 *vatRate ));
+           this.save();
+           
+           
+       }
 
     public void decrementQuantity() {
 
