@@ -15,13 +15,13 @@
                <children>
                   <BorderPane AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <right>
-                        <JFXButton fx:id="productPrice" onAction="#goToProduct" style="-fx-background-color: #f37d8a; -fx-background-radius: 15;" text="Price" textFill="WHITE" BorderPane.alignment="CENTER" />
+                        <JFXButton fx:id="productPrice" maxWidth="90.0" minWidth="73.0" onAction="#goToProduct" prefHeight="27.0" prefWidth="73.0" style="-fx-background-color: #f37d8a; -fx-background-radius: 15;" text="Price" textFill="WHITE" BorderPane.alignment="CENTER" />
                      </right>
                      <padding>
-                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                        <Insets bottom="10.0" left="3.0" right="3.0" top="10.0" />
                      </padding>
                      <left>
-                        <JFXButton fx:id="productName" onAction="#goToProduct" ripplerFill="TRANSPARENT" text="Button" textOverrun="CLIP" BorderPane.alignment="CENTER_LEFT" />
+                        <JFXButton fx:id="productName" maxWidth="124.0" minWidth="116.0" onAction="#goToProduct" prefHeight="27.0" prefWidth="116.0" ripplerFill="TRANSPARENT" text="Button" textOverrun="CLIP" BorderPane.alignment="CENTER_LEFT" />
                      </left>
                   </BorderPane>
                </children>
