@@ -138,7 +138,7 @@ public class OrderPaymentController implements Initializable {
     @FXML
     private void goToMain(ActionEvent event) {
         
-        NavigationService.goTo(event, this, "/allforkids/store/welcome/Welcome.fxml");
+        NavigationService.goTo(event, this, "/allforkids/welcome/Welcome.fxml");
         
     }
 
