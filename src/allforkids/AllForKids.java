@@ -40,11 +40,11 @@ public class AllForKids extends Application {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        System.setProperty("host", "pma.allforkids.ml");
+        System.setProperty("host", "localhost");
         System.setProperty("port", "3306");
         System.setProperty("database", "from_scratch");
-        System.setProperty("user", "wassim");
-        System.setProperty("password", "Lpd*de7W");
+        System.setProperty("user", "root");
+        System.setProperty("password", "root");
         System.setProperty("uploads_folder", "/Users/wattouma/Documents/www/AllForKidsWeb/data/");
         launch(args);
     }
